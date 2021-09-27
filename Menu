@@ -1,0 +1,62 @@
+import java.util.Scanner;
+ 
+class MenuDriven
+{
+public static void main(String args[])
+ {
+  Scanner s=new Scanner(System.in);
+  System.out.println("enter 1. Reverse of a number\nenter 2. Sum of digits\nenter 3. Prime numbers from 1 to 100 are\n");
+  System.out.println("enter your choice");
+  int ch=s.nextInt();
+  switch(ch)
+{
+   
+  case 1:
+           
+           System.out.println("enter the number:");
+           int num=s.nextInt();
+           int digit,rev=0;
+           while(num!=0)
+            {
+              digit=num%10;     
+              rev=(rev*10)+digit;
+              num=num/10;
+            }
+          System.out.println("Reverse of the number is:" +rev);
+          break;
+
+   case 2:
+          System.out.println("enter the number:");
+           int n1=s.nextInt();
+           int rem,sum=0;
+           while(n1>0)
+            {
+              rem=n1%10; 
+              sum=sum+rem;
+              n1=n1/10;
+            }
+          System.out.println("Sum of the number is:" +sum);
+          break;
+  
+  case 3:
+          System.out.println("Prime numbers from 1 to 100 are:");
+          for(int i=1;i<=100;i++)
+          {
+           int temp=0;
+           for(int j=2;j<=i-1;j++)
+            {
+             if(i%j==0)
+              {
+                temp++;
+              }
+           }
+           if(temp==0)
+           System.out.print(i+ " ");
+          } 
+          break;
+
+default: System.out.println("Invalid choice");
+         break;
+   }
+  }
+}
